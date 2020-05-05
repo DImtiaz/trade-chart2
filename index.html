@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from 150.95.132.50:3000/index by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 05 May 2020 18:25:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Crypo</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/socket.io.js"></script>
+  
+
+</head>
+<!--
+<body id="light">
+  <header class="light-bb"> -->
+
+<body id="dark">
+  <header class="dark-bb">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="exchange-light.html"><img src="assets/images/logo-light.png" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu"
+        aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="icon ion-md-menu"></i>
+      </button>
+
+    </nav>
+  </header>
+
+  
+</br>
+<div class="container-fluid p-0">
+  <div class="col-md-12 mb15">
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="../s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async>
+        {
+          "colorTheme": "dark"
+        }
+      </script>
+    </div>
+    <!-- TradingView Widget END -->
+  </div>
+</div>
+
+
+<div class="container-fluid mtb15 no-fluid">
+  <div class="row sm-gutters">
+
+
+
+
+
+    <div class="col-md-9">
+      <div class="market-history market-order mt15">
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#open-orders" role="tab" aria-selected="true">Open
+              Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#stop-orders" role="tab" aria-selected="false">Closed
+              Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#order-history" role="tab" aria-selected="false">Order
+              history</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#trade-history" role="tab" aria-selected="false">Balance</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+
+          <div class="tab-pane fade show active" id="open-orders" role="tabpanel">
+
+
+
+            <table id="opentrades" class="table justify-content-between market-order-item">
+              <thead>
+                <tr>
+                  <th>Order</th>
+                  <th>Symbol</th>
+                  <th>Buy/Sell</th>
+                  <th>Price</th>
+                  <th>TP</th>
+                  <th>SL</th>
+                  <th>Profit</th>
+                </tr>
+              </thead>
+
+              <tbody class="mCustomScrollbar _mCS_12 mCS-autoHide" style="position: relative; overflow: visible;">
+              	<tr>
+              		<td>EURUSD</td>
+              		<td>£</td>
+              		<td>BUY</td>
+              		<td>1.09594</td>
+              		<td>0</td>
+              		<td>1.099</td>
+              		<td>-7.02</td>			
+              	</tr>
+
+              </tbody>
+            </table>
+
+          </div>
+
+
+
+          <div class="tab-pane fade" id="stop-orders" role="tabpanel">
+            <ul class="d-flex justify-content-between market-order-item">
+              <li>Time</li>
+              <li>All pairs</li>
+              <li>All Types</li>
+              <li>Buy/Sell</li>
+              <li>Price</li>
+              <li>Amount</li>
+              <li>Executed</li>
+              <li>Unexecuted</li>
+            </ul>
+            <span class="no-data">
+              <i class="icon ion-md-document"></i>
+              No data
+            </span>
+          </div>
+          <div class="tab-pane fade" id="order-history" role="tabpanel">
+            <ul class="d-flex justify-content-between market-order-item">
+              <li>Time</li>
+              <li>All pairs</li>
+              <li>All Types</li>
+              <li>Buy/Sell</li>
+              <li>Price</li>
+              <li>Amount</li>
+              <li>Executed</li>
+              <li>Unexecuted</li>
+            </ul>
+            <span class="no-data">
+              <i class="icon ion-md-document"></i>
+              No data
+            </span>
+          </div>
+          <div class="tab-pane fade" id="trade-history" role="tabpanel">
+            <ul class="d-flex justify-content-between market-order-item">
+              <li>Time</li>
+              <li>All pairs</li>
+              <li>All Types</li>
+              <li>Buy/Sell</li>
+              <li>Price</li>
+              <li>Amount</li>
+              <li>Executed</li>
+              <li>Unexecuted</li>
+            </ul>
+            <span class="no-data">
+              <i class="icon ion-md-document"></i>
+              No data
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3">
+      <div class="market-news mt15">
+        <h2 class="heading">Market News</h2>
+        <ul>
+          <li><a href="#!">
+              <strong>KCS Pay Fees Feature is Coming Soon</strong>
+              To accelerate the ecosystem construction of KuCoin Share (KCS) and promote the implementation of the KCS
+              application.
+              <span>2019-12-04 20:22</span>
+            </a></li>
+          <li><a href="#!">
+              <strong>KCS Pay Fees Feature is Coming Soon</strong>
+              To accelerate the ecosystem construction of KuCoin Share (KCS) and promote the implementation of the KCS
+              application.
+              <span>2019-12-04 20:22</span>
+            </a></li>
+          <li><a href="#!">
+              <strong>KCS Pay Fees Feature is Coming Soon</strong>
+              To accelerate the ecosystem construction of KuCoin Share (KCS) and promote the implementation of the KCS
+              application.
+              <span>2019-12-04 20:22</span>
+            </a></li>
+          <li><a href="#!">
+              <strong>KCS Pay Fees Feature is Coming Soon</strong>
+              To accelerate the ecosystem construction of KuCoin Share (KCS) and promote the implementation of the KCS
+              application.
+              <span>2019-12-04 20:22</span>
+            </a></li>
+          <li><a href="#!">
+              <strong>KCS Pay Fees Feature is Coming Soon</strong>
+              To accelerate the ecosystem construction of KuCoin Share (KCS) and promote the implementation of the KCS
+              application.
+              <span>2019-12-04 20:22</span>
+            </a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<style>
+  .tradingview-widget-copyright {
+    font-size: 13px !important;
+    line-height: 32px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-family: 'Trebuchet MS', Arial, sans-serif !important;
+    color: #9db2bd !important;
+  }
+
+  .tradingview-widget-copyright .blue-text {
+    color: #2196f3 !important;
+  }
+
+  .tradingview-widget-copyright a {
+    text-decoration: none !important;
+    color: #9db2bd !important;
+  }
+
+  .tradingview-widget-copyright a:visited {
+    color: #9db2bd !important;
+  }
+
+  .tradingview-widget-copyright a:hover .blue-text {
+    color: #38acdb !important;
+  }
+
+  .tradingview-widget-copyright a:active .blue-text {
+    color: #299dcd !important;
+  }
+
+  .tradingview-widget-copyright a:visited .blue-text {
+    color: #2196f3 !important;
+  }
+</style>
+
+<script src="assets/js/jquery.mCustomScrollbar.html"></script>
+<div hidden="">
+  <div style="width: 100%; height: 100%; position: relative;"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" role="group" style="width: 100%; height: 100%; overflow: visible;">
+      <desc>JavaScript chart by amCharts</desc>
+      <defs>
+        <clipPath id="id-113">
+          <path></path>
+        </clipPath>
+        <filter id="filter-id-118" width="200%" height="200%" x="-50%" y="-50%">
+          <feGaussianBlur result="blurOut" in="SourceGraphic" stdDeviation="1.5"></feGaussianBlur>
+          <feOffset result="offsetBlur" dx="1" dy="1"></feOffset>
+          <feFlood flood-color="#000000" flood-opacity="0.5"></feFlood>
+          <feComposite in2="offsetBlur" operator="in"></feComposite>
+          <feMerge>
+            <feMergeNode></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+      </defs>
+    </svg></div>
+</div>
+<script>
+  $('tbody, .market-news ul').mCustomScrollbar({
+    theme: 'minimal',
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+
+
+
+    $('#opentrades').dataTable({
+      paging: true,
+      //scrollY: 400,
+      dom: '<"top"i>rt<"bottom"flp><"clear">',
+      bInfo : false,
+
+      ajax: {
+        "url": "/trades/open",
+        "dataSrc": ""
+      },
+      searching: false,
+      columns: [
+
+        {
+          data: 'symbol'
+        },
+        {
+          data: 'buysell'
+        },
+        {
+          data: 'price'
+        },
+
+        {
+          data: 'sl'
+        },
+        {
+          data: 'tp'
+        },
+        {
+          data: 'profit'
+        }
+
+      ]
+    });
+    $('#closetrades').dataTable({
+      paging: true,
+      //scrollY: 400,
+
+      ajax: {
+        "url": "/trades/close",
+        "dataSrc": ""
+      },
+      searching: false,
+      columns: [
+
+        {
+          data: 'symbol'
+        },
+        {
+          data: 'buysell'
+        },
+        {
+          data: 'price'
+        },
+
+        {
+          data: 'sl'
+        },
+        {
+          data: 'tp'
+        },
+        {
+          data: 'profit'
+        }
+
+      ]
+    });
+
+
+    function getData(url) {
+      $.ajax({
+        type: 'GET',
+        url: url,
+        data: {},
+        success: function (msg) {
+          return msg;
+        },
+        error: function (xhr, status, error) {
+          console.log(xhr.responseText);
+          return null;
+        }
+      });
+    };
+
+
+    var socketio = io();
+    $(function () {
+      socketio.on('message', function (msg) {
+        //alert(msg)
+
+      });
+
+      socketio.on('OPEN', function (OpenTradesData) {
+        console.log('OPEN');
+        var page = $('#opentrades').DataTable().page.info();
+        $('#opentrades').DataTable().ajax.reload();
+        //$('#opentrades').DataTable().fnPageChange(page.page);
+      });
+
+      socketio.on('CLOSE', function (OpenTradesData) {
+        console.log('CLOSE');
+        var page = $('#opentrades').DataTable().page.info();
+        $('#closetrades').DataTable().ajax.reload();
+        //$('#closetrades').DataTable().fnPageChange(page.page);
+      });
+
+    });
+
+
+
+
+
+
+  });
+</script>
+
+
+
+
+
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/amcharts-core.min.js"></script>
+  <script src="assets/js/amcharts.min.js"></script>
+  <script src="assets/js/jquery.mCustomScrollbar.html"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/jquery.dataTables.min.js"></script>
+  
+</body>
+
+
+<!-- Mirrored from 150.95.132.50:3000/index by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 05 May 2020 18:26:06 GMT -->
+</html>
